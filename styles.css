@@ -1,11 +1,10 @@
-/*tirando as margens automáticas */
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/*criação de variáveis */
 :root {
     --branco-principal: #FFFFFF;
     --cinza-secundario: #C0C0C0;
@@ -16,27 +15,23 @@
 }
 
 body {
-    /*colocando estilizações gerais, mas depois, de classe em classe, estilizando para cada coisa individual de cada, as "particularidades"*/
-    background-color: var(--cor-de-fundo); /*toda cor de fundo da página */
-    color: var(--branco-principal); /*cor das frases */
+    background-color: var(--cor-de-fundo); 
+    color: var(--branco-principal); 
     font-family: var(--fonte-principal);
     font-size: 16px;
     font-weight: 400;
 }
 
-/*grid ex: divide a tela em grades hori e vert, container é o elemento pai, com o grid template estou dividindo a tela ao meio verticalmente 50/50, se eu tiver duas divs*/
-/*dentro do elemento pai, então 1 div ficara de um lado dos 50% e a 2 div ficará do outro lado*/
-.container {  /*container sera usado em todas as sessões */
-    height: 100vh; /*altura, imagem ocupando toda tela, 100% */
-    display: grid; /* permite que você crie layouts de grade (ou seja, linhas e colunas) para organizar os elementos filhos dentro desse container */
-    grid-template-columns: 50% 50%; /*layout das colunas, nesse caso, criando duas colunas, cada uma ocupando 50% da largura do container, duas colunas igualmente divididas */
+.container {  
+    height: 100vh; 
+    display: grid; 
+    grid-template-columns: 50% 50%;
 }
 
-/*imagem sendo colocada aqui, e não no html, pq é apenas uma imagem decorativa, não afeta em nada o usuário, ao contrário do combo */
 .principal {
-    background-image: url("images/Background.png");/*apenas imagem decorativa */
-    background-repeat: no-repeat; /*para não repetir a imagem */
-    background-size: contain; /*preencher o container, no caso aqui, a section */
+    background-image: url("images/Background.png");
+    background-repeat: no-repeat; 
+    background-size: contain; 
     align-items: center;
     text-align: center;
     
@@ -51,26 +46,25 @@ body {
     font-weight: 700;
 }
 
- /*4 valores funcionam como um relógio, em sentido horário, margem do topo, direita, baixo, esquerda */
 .container__imagem {
     margin: 1em 0 2em 0;
 }
 
 .container__botao{
-    background-color: var(--botao-azul); /*cor de fundo do botão */
-    border-radius: 5px; /*deixar as pontas do quadrado, redondas */
-    padding: 1em; /*em = relativa ao tamanho da fonte, fonte de 16px = 1em será 16px */ 
-    /*preenchimento de dentro para fora, como se fosse engordar o botão */
-    color: var(--branco-principal); /*cor da escrita dentro do botão */
-    display: block; /*colocando o botão embaixo da imagem de combo, ocupando o seu bloco inteiro */
+    background-color: var(--botao-azul); 
+    border-radius: 5px; 
+    padding: 1em; 
+    
+    color: var(--branco-principal); 
+    display: block; 
     font-size: 16px;
-    text-decoration: none;/*tirar a decoração do botão, que vem como padrão por ser um link, uma linha embaixo */
+    text-decoration: none;
     margin-bottom: 1em;
 }
 
 .botao_secundario {
-    background-color: transparent; /*botão transparente, sem fundo*/
-    border: 2px solid var(--branco-principal); /*criando a borda do botão, 2px = grossura, solid = linha, cor*/
+    background-color: transparent; 
+    border: 2px solid var(--branco-principal); 
     
 }
 
@@ -99,7 +93,7 @@ body {
 }
 
 .secundario_botao {
-    display: inline-block;/*não pegar o espaço inteiro do bloco, apenas o espaço dele*/
+    display: inline-block;
     margin-top: 1em;
 }
 
@@ -161,6 +155,6 @@ body {
     margin-bottom: 3em;
 }
 
-.lista__link a:hover { /*pseudo classe, pega a classe, o elemento dentro da classe que é a ancora e hover, colorir quando passar o mouse por cima*/
+.lista__link a:hover { 
     color: var(--botao-azul);
 }
