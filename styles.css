@@ -1,0 +1,166 @@
+/*tirando as margens automáticas */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*criação de variáveis */
+:root {
+    --branco-principal: #FFFFFF;
+    --cinza-secundario: #C0C0C0;
+    --cinza-secundario: #F9F9F9;
+    --botao-azul: #167BF7;
+    --cor-de-fundo: #00030C;
+    --fonte-principal: 'Inter';
+}
+
+body {
+    /*colocando estilizações gerais, mas depois, de classe em classe, estilizando para cada coisa individual de cada, as "particularidades"*/
+    background-color: var(--cor-de-fundo); /*toda cor de fundo da página */
+    color: var(--branco-principal); /*cor das frases */
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/*grid ex: divide a tela em grades hori e vert, container é o elemento pai, com o grid template estou dividindo a tela ao meio verticalmente 50/50, se eu tiver duas divs*/
+/*dentro do elemento pai, então 1 div ficara de um lado dos 50% e a 2 div ficará do outro lado*/
+.container {  /*container sera usado em todas as sessões */
+    height: 100vh; /*altura, imagem ocupando toda tela, 100% */
+    display: grid; /* permite que você crie layouts de grade (ou seja, linhas e colunas) para organizar os elementos filhos dentro desse container */
+    grid-template-columns: 50% 50%; /*layout das colunas, nesse caso, criando duas colunas, cada uma ocupando 50% da largura do container, duas colunas igualmente divididas */
+}
+
+/*imagem sendo colocada aqui, e não no html, pq é apenas uma imagem decorativa, não afeta em nada o usuário, ao contrário do combo */
+.principal {
+    background-image: url("images/Background.png");/*apenas imagem decorativa */
+    background-repeat: no-repeat; /*para não repetir a imagem */
+    background-size: contain; /*preencher o container, no caso aqui, a section */
+    align-items: center;
+    text-align: center;
+    
+}
+
+.container__caixa {
+    margin: 0 6em;
+}
+
+.container__titulo {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+ /*4 valores funcionam como um relógio, em sentido horário, margem do topo, direita, baixo, esquerda */
+.container__imagem {
+    margin: 1em 0 2em 0;
+}
+
+.container__botao{
+    background-color: var(--botao-azul); /*cor de fundo do botão */
+    border-radius: 5px; /*deixar as pontas do quadrado, redondas */
+    padding: 1em; /*em = relativa ao tamanho da fonte, fonte de 16px = 1em será 16px */ 
+    /*preenchimento de dentro para fora, como se fosse engordar o botão */
+    color: var(--branco-principal); /*cor da escrita dentro do botão */
+    display: block; /*colocando o botão embaixo da imagem de combo, ocupando o seu bloco inteiro */
+    font-size: 16px;
+    text-decoration: none;/*tirar a decoração do botão, que vem como padrão por ser um link, uma linha embaixo */
+    margin-bottom: 1em;
+}
+
+.botao_secundario {
+    background-color: transparent; /*botão transparente, sem fundo*/
+    border: 2px solid var(--branco-principal); /*criando a borda do botão, 2px = grossura, solid = linha, cor*/
+    
+}
+
+.container__aviso {
+    color: var(--cinza-secundario);
+    font-size: 12px;
+}
+
+.secundario__imagem {
+    width: 70%;
+}
+
+.secundario {
+    align-items: center;
+    margin: 0 15em;
+}
+
+.descricao__titulo {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 0.1em;
+}
+
+.descricao__texto {
+    color: var(--cinza-secundario);
+}
+
+.secundario_botao {
+    display: inline-block;/*não pegar o espaço inteiro do bloco, apenas o espaço dele*/
+    margin-top: 1em;
+}
+
+.texto {
+    margin-right: 10em;
+    color: var(--cinza-secundario);
+}
+
+.dispositivos__titulo {
+    color: var(--branco-principal);
+    font-family: var(--fonte-principal);
+    font-size: 48px;
+}
+
+.dispositivos {
+    text-align: center;
+}
+
+.dispositivos__lista {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+
+.lista__item {
+    font-size: 32px;
+    color: var(--branco-principal);
+    font-family: var(--fonte-principal);
+}
+
+.rodape {
+    text-align: center;
+}
+
+.rodape__logo {
+    margin-top: 5em;
+}
+
+.rodape__lista {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 3em 0 3em 0;
+    gap: 2em;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 16px;
+    font-family: var(--fonte-principal);
+    color: var(--branco-principal);
+}
+
+.rodape__paragrafo {
+    font-size: 14px;
+    color: var(--cinza-secundario);
+    margin-bottom: 3em;
+}
+
+.lista__link a:hover { /*pseudo classe, pega a classe, o elemento dentro da classe que é a ancora e hover, colorir quando passar o mouse por cima*/
+    color: var(--botao-azul);
+}
